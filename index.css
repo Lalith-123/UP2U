@@ -1,0 +1,225 @@
+body {
+    /* background-color: red; */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* First */
+.First {
+    /* background-color: red; */
+    height: 100vh;
+    width: 100vw;
+}
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+  
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    /* background-color: #000000cc; */
+}
+
+/* Second */
+.Second{
+    background-color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.image-container_1 {
+    flex: 1;
+    width: 30%;
+}
+.text-container {
+    flex: 1;
+    padding: 20px;
+}
+/* Responsive layout */
+@media (max-width: 950px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .text-container {
+        padding: 10px;
+    }
+    .image-container_1{
+        width: 80%;
+    }
+}
+
+/* Fifth */
+.Fifth{
+    background-color: whitesmoke;
+}
+.container_1 {
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+.services-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+}
+.card {
+    flex: 1;
+    max-width: 300px; /* Adjust card width as needed */
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text inside the card to the left */
+}
+
+/* Media query for screen width 700px and below */
+@media (max-width: 700px) {
+    .cards-container {
+        flex-direction: column; /* Cards stack vertically */
+        align-items: center; /* Center cards horizontally */
+    }
+    .card{
+        width: 70%;
+    }
+}
+/* Third */
+.Third{
+    background-color: whitesmoke;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.buttons button{
+    height: 30px;
+    width: 200px;
+    border: 0;
+}
+/* img{
+    height: 100px;
+    width: 100px;
+} */
+/* Pop-up image */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    text-align: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 35px;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+    z-index: 9999;
+}
+
+.left-arrow {
+    left: 15px;
+}
+
+.right-arrow {
+    right: 15px;
+}
+
+/* Gallery */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+.gallery {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    grid-auto-rows: 125px;
+    grid-auto-flow: dense;
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1060px) {
+    .gallery {
+      width: 60%;
+    }
+}
+@media screen and (max-width: 660px) {
+    .gallery {
+      width: 90%;
+    }
+}
+
+.gallery > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.gallery .tall {
+    grid-row: span 2;
+}
+/* Forth */
+.Forth{
+    background-color: yellow;
+    height: 100vh;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="First">
+        <div className="overlay"></div>
+        <video src="assets/UP2U.mp4" autoPlay loop muted>
+        <div className="content">
+            <h1>Welcome</h1>
+            <p>To my site.</p>
+        </div>
+    </div>
+    <div class="Second">
+        <div class="container">
+            <div class="image-container_1">
+                <img src="assets/UP2U_About.jpeg" alt="Photo" style="max-width: 100%;">
+            </div>
+            <div class="text-container">
+                <h2>About Up2U MVS Media Network</h2>
+                <p>Introducing Up2U MVS Media Network, a leading Video Production company based in Andhra Pradesh, India. With a passion for storytelling and a commitment to excellence, we specialize in creating captivating videos that leave a lasting impact. Whether you need corporate videos, commercials, or event coverage, our talented team of professionals will bring your vision to life with stunning visuals and compelling narratives. Trust MVS Media Network to deliver top-notch video production services that will elevate your brand and engage your audience like never before.</p>
+            </div>
+        </div>
+    </div>
+    <div class="Fifth">
+        <div class="container_1">
+            <div class="services-heading">My Services</div>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Service 1</h3>
+                    <p>Description of Service 1.</p>
+                </div>
+                <div class="card">
+                    <h3>Service 2</h3>
+                    <p>Description of Service 2.</p>
+                </div>
+                <div class="card">
+                    <h3>Service 3</h3>
+                    <p>Description of Service 3.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Third">
+        <div class="buttons">
+            <button>Wedding</button>
+            <button>Ads</button>
+            <button>Images</button>
+        </div>
+        <div class="gallery">
+            <div class="image-container">
+                <img src="assets/port-1.jpg">
+            </div>
+            <div class="image-container">
+                <img src="assets/port-2.jpg">
+            </div>
+            <div class="image-container tall">
+                <img src="assets/port-3.jpg">
+            </div>
+            <div class="image-container">
+                <img src="assets/port-4.jpg">
+            </div>
+            <div class="image-container">
+                <img src="assets/port-5.jpg">
+            </div>
+            <div class="image-container tall">
+                <img src="assets/port-6.jpg">
+            </div>
+            <div class="image-container">
+                <img src="assets/port-7.jpg">
+            </div>
+        </div>
+        <div class="lightbox">
+            <span class="close-btn">&times;</span>
+            <img class="lightbox-img">
+            <span class="arrow-btn left-arrow">&lt;</span>
+            <span class="arrow-btn right-arrow">&gt;</span>
+        </div>
+        <div class="Ads"></div>
+        <div class="Images"></div>
+    </div>
+    <div class="Forth"></div>
+    <script>
+        const images = document.querySelectorAll('.image-container img');
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        const closeBtn = document.querySelector('.close-btn');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+    
+        let currentImageIndex;
+    
+        // Function to show the lightbox with clicked image
+        function showLightbox(index) {
+            lightboxImg.src = images[index].src;
+            lightbox.style.display = 'block';
+            currentImageIndex = index;
+        }
+    
+        // Function to close the lightbox
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+    
+        // Event listeners for each image
+        images.forEach((image, index) => {
+            image.addEventListener('click', () => {
+                showLightbox(index);
+            });
+        });
+    
+        // Event listener for close button
+        closeBtn.addEventListener('click', closeLightbox);
+    
+        // Event listener for navigating to next image
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            lightboxImg.src = images[currentImageIndex].src;
+        }
+    
+        // Event listener for navigating to previous image
+        function showPreviousImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            lightboxImg.src = images[currentImageIndex].src;
+        }
+    
+        // Event listeners for arrow buttons
+        leftArrow.addEventListener('click', showPreviousImage);
+        rightArrow.addEventListener('click', showNextImage);
+    </script>
+</body>
+</html>
